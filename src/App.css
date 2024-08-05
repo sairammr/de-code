@@ -1,0 +1,12 @@
+w3m-button{
+    background-color: aliceblue;
+    height: 30px;
+    width : 5vw;
+    color: aqua;
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: "#FFFFFF";
+}
