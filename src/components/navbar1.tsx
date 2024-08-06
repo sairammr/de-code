@@ -1,6 +1,11 @@
 import Logo from "../assets/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar1 = () => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/course');
+      };
     return(
         <div>
         <div className="flex justify-between"
@@ -13,8 +18,10 @@ const Navbar1 = () => {
                 color : "#fff",
                 
             }}>
+                
+                
                 <div style={{fontSize:"15px",fontWeight:"100"}}>Home</div>
-                <div style={{fontSize:"15px",fontWeight:"100"}} >Courses</div>
+                <div style={{fontSize:"15px",fontWeight:"100"}} onClick={handleClick}>Courses</div>
                 <div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div>
                 <div style={{fontSize:"15px",fontWeight:"100"}}>Events</div>
                 <div style={{
