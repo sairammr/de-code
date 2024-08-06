@@ -9,6 +9,7 @@ import LoginPage from './pages/loginPage.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
+		<Landing/>
 		<BrowserRouter>
 		<Routes>
 			<Route path='/course' element={<Courses/>}/>
