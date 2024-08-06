@@ -15,19 +15,22 @@
   }
   
   .courses-main {
+    margin-top: 3%;
     display: flex;
     flex-direction: row;
   }
   
   .courses-left {
     display: flex;
-    flex: 0 0 66%;
+    flex: 0 0 64%;
     flex-direction: column;
+    margin-right: 2%;
   }
   
   .courses-right {
     display: flex;
-    flex: 0 0 34%;
+    flex: 0 0 32%;
+    margin-right: 1.5%;
   }
   
   .ad-img {
