@@ -4,6 +4,7 @@ import StudyPlan from "../components/StudyPlan";
 import AccessStatus from "../components/courses-access";
 import Calendar from "../components/Calender";
 import CourseContent from "../components/CourseContent";
+import Navbar1 from "../components/navbar1";
 export default function Courses() {
     const courses = [
         {
@@ -81,7 +82,7 @@ export default function Courses() {
       ];
       
     return(
-        <>
+        <><Navbar1/>
         <div className="courses-main">
             <div className="courses-left">
                 <div className="courses-ad">
