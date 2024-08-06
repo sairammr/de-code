@@ -6,14 +6,10 @@ import Landing from "./pages/landing"
 import './index.css';
 import Courses from "./pages/Courses.tsx";
 import LoginPage from './pages/loginPage.tsx';
+import Blog from './components/Blog.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<Landing/>
-		<BrowserRouter>
-		<Routes>
-			<Route path='/course' element={<Courses/>}/>
-		</Routes>
-		</BrowserRouter>
+		<Blog/>
 	</React.StrictMode>
 );
