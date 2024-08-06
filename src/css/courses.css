@@ -1,0 +1,131 @@
+/* Common Styles */
+.common-border-radius {
+    border-radius: 8%;
+  }
+  
+  .common-background {
+    background: linear-gradient(315deg, #cacaca, #f0f0f0);
+  }
+  
+  .common-box-shadow {
+    box-shadow: -5px -5px 10px #5a5a5a, 5px 5px 10px #ffffff;
+  }
+  body {
+    background-color: #ffffff;
+  }
+  
+  .courses-main {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .courses-left {
+    display: flex;
+    flex: 0 0 66%;
+    flex-direction: column;
+  }
+  
+  .courses-right {
+    display: flex;
+    flex: 0 0 34%;
+  }
+  
+  .ad-img {
+    border-radius: 8%; /* Using the specific radius for images */
+  }
+  
+  .study-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    justify-content: space-around;
+    gap: 2rem;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-bottom: 3.5%;
+  }
+  
+  .study-plan {
+    font-size: 1.5rem;
+    padding: 1%;
+    margin-left: 3%;
+    color: rgb(44, 43, 43);
+    font-weight: 700;
+  }
+  
+  .item-icon {
+    width: 30%;
+    display: flex;
+    justify-content: start;
+    padding: 2%;
+    margin-right: 10px;
+  }
+  
+  .item-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: black;
+  }
+  
+  .study-plan-item {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    width: 18rem;
+    font-size: 16px;
+    background-color: #e4eee4;
+    background: linear-gradient(315deg, #f0f0f0, #ebeaea);
+    border-radius: 5px;
+    box-shadow: -5px -5px 10px #b5b5b5, 5px 5px 10px #ffffff;
+  }
+  
+  @media (max-width: 600px) {
+    .study-plan-grid {
+      grid-template-columns: repeat(2, 100px);
+    }
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .ease-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .status {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .courses-access {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: max-content;
+    height: max-content;
+  }
+  
+  .courses-ease {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+  }
+  
+  .course-calender {
+    height: max-content;
+    padding: 2%;
+  }
+  
+  /* Apply common styles */
+  .courses-access,
+  .course-calender {
+    border-radius: 8%;
+    background: linear-gradient(315deg, #cacaca, #f0f0f0);
+    box-shadow: -5px -5px 10px #5a5a5a, 5px 5px 10px #ffffff;
+  }
+    
