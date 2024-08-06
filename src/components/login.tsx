@@ -3,7 +3,7 @@ import logo from "../assets/logo1.svg"
 const Logincomp = ()=>{
     return (
         <div className="flex">
-            <div style={{backgroundColor:"#FFE6C9",height:"100vh",width:"50vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
+            <div style={{backgroundColor:"#D7C5A8",height:"100vh",width:"50vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
                 
                 <img src={logo} alt="" style={{
                     height:"50vh",width:"25vw"
