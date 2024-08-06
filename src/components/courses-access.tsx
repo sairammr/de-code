@@ -1,4 +1,4 @@
-import Test from "../assets/test.svg";
+import Test from"../assets/test.svg";
 import Done from "../assets/done.svg";
 import notDone from "../assets/notdone.svg";
 import Star from "../assets/star.svg";
