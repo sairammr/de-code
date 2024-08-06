@@ -8,9 +8,10 @@ import './index.css';
 import { Web3ModalProvider } from './providers/WagmiProvider.tsx';
 import AnonProvider from './providers/AnonProvider.tsx';
 import Courses from "./pages/Courses.tsx";
+import LoginPage from './pages/loginPage.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<Landing/>
+		<LoginPage/>
 	</React.StrictMode>
 );
