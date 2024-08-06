@@ -23,6 +23,7 @@ const Footer = () => {
             </div>
             <div style={{
                 color:"#4D8FA4",fontSize:"13px",fontWeight:"200",marginTop:"0.2%"}}>© DeCode. </div>
+            <br></br>
        </div> 
     )
 }
