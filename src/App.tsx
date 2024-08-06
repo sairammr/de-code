@@ -1,27 +1,21 @@
 import './App.css';
-import { ToastContainer } from 'react-toastify';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import AadhaarLogin from './pages/AadhaarLogin';
-import WalletLogin from './pages/WalletLogin';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import ProtectedRoutes from './pages/ProtectedRoute';
-
+import Navbar1 from '../src/components/navbar1';
+import Courses from './pages/Courses';
+import Landing from './pages/landing';
 function App() {
 	return (
-		<>
-			<BrowserRouter>
-				<ToastContainer />
-				<Routes>
-					<Route path='/login' element={<WalletLogin />} />
-					<Route element={<ProtectedRoutes />}>
-						<Route path='/' element={<Home />} />
-						<Route path='/verify-aadhaar' element={<AadhaarLogin />} />
-					</Route>
-				</Routes>
-			</BrowserRouter>
-		</>
-	);
+		<Router>
+      <Navbar1 />
+      <Routes>
+        <Route path="/home" element={<Landing/>}/>
+        <Route path="/courses" element={<Courses />} />
+       
+      </Routes>
+    </Router>
+  );
+
 }
 
 export default App;

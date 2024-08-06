@@ -82,7 +82,7 @@ export default function Courses() {
       ];
       
     return(
-        <><Navbar1/>
+        <>
         <div className="courses-main">
             <div className="courses-left">
                 <div className="courses-ad">

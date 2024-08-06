@@ -1,11 +1,7 @@
 import Logo from "../assets/logo.png";
-import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 const Navbar1 = () => {
-    const navigate = useNavigate();
-    const handleClick = () => {
-        navigate('/course');
-      };
+   
     return(
         <div>
         <div className="flex justify-between"
@@ -20,18 +16,19 @@ const Navbar1 = () => {
             }}>
                 
                 
-                <div style={{fontSize:"15px",fontWeight:"100"}}>Home</div>
-                <div style={{fontSize:"15px",fontWeight:"100"}} onClick={handleClick}>Courses</div>
-                <div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div>
-                <div style={{fontSize:"15px",fontWeight:"100"}}>Events</div>
-                <div style={{
+                <Link to="/home"> <div style={{fontSize:"15px",fontWeight:"100"}} >Home</div></Link>
+                <Link to="/courses">
+               <div style={{fontSize:"15px",fontWeight:"100"}} >Courses</div></Link>
+               <Link to="/courses"><div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div></Link>
+               <Link to="/courses"><div style={{fontSize:"15px",fontWeight:"100"}}>Events</div></Link>
+               <Link to="/courses"><div style={{
                     fontSize:"15px",fontWeight:"100",
                     backgroundColor:"#FFF",
                     maxHeight : "3vh",
                     color:"#5B5B5B",
                     padding:"0% 5% 5% 5%",
                     borderRadius: "80px"
-                }}>Login</div>
+                }}>Login</div></Link>
                 
             </nav>
         </div>

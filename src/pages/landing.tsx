@@ -4,7 +4,7 @@ import Lcomp from "../components/Lcomponent";
 const Landing=() => {
     return (
         <div>
-            <Navbar1/>
+            
             <Lcomp/>
             <br />
             <Footer/>
