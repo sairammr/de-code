@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/CourseGrid.css';
+import { useNavigate } from 'react-router-dom';
 
 interface Course {
   icon: string;
@@ -13,10 +14,15 @@ interface CourseGridProps {
 }
 
 const CourseGrid: React.FC<CourseGridProps> = ({ courses }) => {
+  const navigate = useNavigate();
+  const courseDetailsRedirection = (index: number) => {
+    navigate(`/exam/courses/${index}`);
+  };
+  
   return (
-    <div className="grid-container">
+    <div className="grid-container" >
       {courses.map((course, index) => (
-        <div key={index} className="grid-item">
+        <div key={index} className="grid-item" onClick={() =>courseDetailsRedirection(index)}>
           <div className="label">{course.label}</div>
           <div className="icon">{course.icon}</div>
           <h3 className="title">{course.title}</h3>

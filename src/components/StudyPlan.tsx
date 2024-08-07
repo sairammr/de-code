@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import '../css/courses.css'; 
-import CourseDetailsPage from '../pages/coursedetailspage';
 const studyPlanItems = [
     { text: "JavaScript", icon: "https://img.icons8.com/color/48/000000/javascript.png" },
     { text: "React", icon: "https://img.icons8.com/ios-filled/50/000000/react.png" },

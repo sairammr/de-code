@@ -4,82 +4,117 @@ import StudyPlan from "../components/StudyPlan";
 import AccessStatus from "../components/courses-access";
 import Calendar from "../components/Calender";
 import CourseContent from "../components/CourseContent";
-import Navbar1 from "../components/navbar1";
 export default function Courses() {
-    const courses = [
-        {
-          icon: '💻',
-          title: 'JavaScript Basics',
-          details: 'Learn the fundamentals of JavaScript, the programming language of the web.',
-          label: 'Beginner'
-        },
-        {
-          icon: '🔍',
-          title: 'Advanced JavaScript',
-          details: 'Deep dive into advanced concepts and features of JavaScript, including ES6+.',
-          label: 'Advanced'
-        },
-        {
-          icon: '📗',
-          title: 'Introduction to Python',
-          details: 'Start coding in Python, a versatile and popular programming language.',
-          label: 'Beginner'
-        },
-        {
-          icon: '🔬',
-          title: 'Data Science with Python',
-          details: 'Learn how to use Python for data analysis and visualization.',
-          label: 'Intermediate'
-        },
-        {
-          icon: '🔧',
-          title: 'Full-Stack Web Development',
-          details: 'Become a full-stack web developer by learning both frontend and backend technologies.',
-          label: 'Comprehensive'
-        },
-        {
-          icon: '📘',
-          title: 'React for Beginners',
-          details: 'Get started with React, a popular library for building user interfaces.',
-          label: 'Beginner'
-        },
-        {
-          icon: '⚛️',
-          title: 'React Advanced Concepts',
-          details: 'Master advanced React concepts and patterns for building scalable applications.',
-          label: 'Advanced'
-        },
-        {
-          icon: '📙',
-          title: 'Introduction to TypeScript',
-          details: 'Learn TypeScript, a typed superset of JavaScript that scales.',
-          label: 'Intermediate'
-        },
-        {
-          icon: '📂',
-          title: 'Node.js Essentials',
-          details: 'Learn the basics of Node.js, a JavaScript runtime for building server-side applications.',
-          label: 'Beginner'
-        },
-        {
-          icon: '🌐',
-          title: 'APIs with Node.js and Express',
-          details: 'Learn how to build RESTful APIs using Node.js and Express.',
-          label: 'Intermediate'
-        },
-        {
-          icon: '🔒',
-          title: 'Cybersecurity Fundamentals',
-          details: 'Understand the basics of cybersecurity and how to protect applications.',
-          label: 'Comprehensive'
-        },
-        {
-          icon: '🤖',
-          title: 'Introduction to Machine Learning',
-          details: 'Get started with machine learning concepts and techniques using Python.',
-          label: 'Intermediate'
-        }
-      ];
+  const courses = [
+    {
+      icon: '💻',
+      title: 'Introduction to C++',
+      details: 'Learn the basics of C++ programming language, including syntax, data types, and control structures.',
+      label: 'Beginner',
+      company: 'Philo Infotech',
+      mcqQuestions: 20,
+      programmingQuestions: 20
+    },
+    {
+      icon: '🔍',
+      title: 'Advanced Java Programming',
+      details: 'Deep dive into advanced Java concepts, including multithreading, collections, and design patterns.',
+      label: 'Advanced',
+      company: 'TechMasters Inc.',
+      mcqQuestions: 30,
+      programmingQuestions: 15
+    },
+    {
+      icon: '📗',
+      title: 'Python for Data Science',
+      details: 'Learn how to use Python for data analysis, visualization, and machine learning.',
+      label: 'Intermediate',
+      company: 'DataMinds Academy',
+      mcqQuestions: 25,
+      programmingQuestions: 10
+    },
+    {
+      icon: '🔧',
+      title: 'Full-Stack JavaScript Development',
+      details: 'Master both frontend and backend development using JavaScript, Node.js, and popular frameworks.',
+      label: 'Comprehensive',
+      company: 'WebWizards LLC',
+      mcqQuestions: 40,
+      programmingQuestions: 25
+    },
+    {
+      icon: '📘',
+      title: 'iOS App Development with Swift',
+      details: 'Learn to build iOS applications using Swift programming language and Xcode.',
+      label: 'Intermediate',
+      company: 'Apple Certified Training',
+      mcqQuestions: 30,
+      programmingQuestions: 20
+    },
+    {
+      icon: '⚛️',
+      title: 'React Native for Mobile Development',
+      details: 'Create cross-platform mobile apps using React Native framework.',
+      label: 'Advanced',
+      company: 'MobileApp Gurus',
+      mcqQuestions: 35,
+      programmingQuestions: 15
+    },
+    {
+      icon: '📙',
+      title: 'Database Design and SQL',
+      details: 'Master database design principles and SQL for efficient data management.',
+      label: 'Beginner',
+      company: 'DataBase Pros',
+      mcqQuestions: 25,
+      programmingQuestions: 15
+    },
+    {
+      icon: '📂',
+      title: 'Cloud Computing Fundamentals',
+      details: 'Introduction to cloud computing concepts, services, and deployment models.',
+      label: 'Beginner',
+      company: 'CloudTech Institute',
+      mcqQuestions: 30,
+      programmingQuestions: 10
+    },
+    {
+      icon: '🌐',
+      title: 'RESTful API Design',
+      details: 'Learn best practices for designing and implementing RESTful APIs.',
+      label: 'Intermediate',
+      company: 'API Solutions Ltd.',
+      mcqQuestions: 20,
+      programmingQuestions: 15
+    },
+    {
+      icon: '🔒',
+      title: 'Ethical Hacking and Penetration Testing',
+      details: 'Learn techniques and tools used in ethical hacking and cybersecurity.',
+      label: 'Advanced',
+      company: 'SecureNet Academy',
+      mcqQuestions: 35,
+      programmingQuestions: 20
+    },
+    {
+      icon: '🤖',
+      title: 'Artificial Intelligence Fundamentals',
+      details: 'Introduction to AI concepts, algorithms, and applications.',
+      label: 'Intermediate',
+      company: 'AI Innovators',
+      mcqQuestions: 30,
+      programmingQuestions: 15
+    },
+    {
+      icon: '🔬',
+      title: 'Blockchain Technology',
+      details: 'Explore the principles of blockchain and its applications in various industries.',
+      label: 'Advanced',
+      company: 'BlockChain Experts',
+      mcqQuestions: 25,
+      programmingQuestions: 10
+    }
+  ];
       
     return(
         <>

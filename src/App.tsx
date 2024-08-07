@@ -3,42 +3,40 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar1 from '../src/components/navbar1';
 import Courses from './pages/Courses';
-import Landing from './pages/landing';	
+import Landing from './pages/landing';
 import LoginPage from './pages/loginPage';
 import CourseDetailsPage from './pages/coursedetailspage';
 import EventPage from './pages/event';
 import Footer from './components/footer';
 import Program from './components/Program';
-const AppContent=()=> {
-	const location = useLocation();
-	return (
-		<div>
-    {location.pathname !== '/login' &&  <Navbar1 /> }
-		
-      
-     <Routes>
-        <Route path="/" element={<Landing/>}/>	
-		<Route path="course-details/:index" element={<CourseDetailsPage />} />
+import ExamIntro from './components/examintro'; // Assuming you have this component
+
+const AppContent = () => {
+  const location = useLocation();
+  return (
+    <div>
+      {location.pathname !== '/login' && <Navbar1 />}
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/course-details/:index" element={<CourseDetailsPage />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/login" element={<LoginPage/>}/>
-		<Route path="/events" element={<EventPage/>}/>
-
-		<Route path='/leaderboard' element={<Program/>}/>
-       <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/events" element={<EventPage />} />
+        <Route path="/exam/courses/:id" element={<ExamIntro />} />
+        <Route path="/leaderboard" element={<Program />} />
       </Routes>
-	  <br />
-	  <Footer/>
-	</div>
-	
+      <br />
+      <Footer />
+    </div>
   );
+};
 
-}
 function App() {
-	return (
-	  <Router>
-		<AppContent />
-	  </Router>
-	);
-  }
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
 
 export default App;

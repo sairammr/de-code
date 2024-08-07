@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-
-import solarizedDark from 'react-syntax-highlighter/dist/esm/styles/hljs/solarized-dark'; // Importing the specific style
-
+import solarizedDark from 'react-syntax-highlighter/dist/esm/styles/hljs/solarized-dark'; 
 import "../index.css";
 
 export default function Program() {
