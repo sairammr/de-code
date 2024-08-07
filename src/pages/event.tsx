@@ -1,6 +1,7 @@
 import Searchbar from "../components/searchbar";
 import EventDisplay from "../components/eventDisplay";
 import ProductList from "../components/EventList";
+import ExamIntroPage from "./examintropage";
 const EventPage = ( ) =>{
     const  p = [
         {
@@ -47,7 +48,9 @@ const EventPage = ( ) =>{
         </div>
         <EventDisplay/>
         <ProductList products={p}/>
+        <ExamIntroPage/>
         </>
+
     )
 }
 export default EventPage;

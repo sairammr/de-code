@@ -1,6 +1,5 @@
-import { replace, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import "../index.css";
-import { MouseEventHandler } from "react";
 export default function Program(){
     const handleback = (): void => {
         const navigate = useNavigate(); // Initialize the navigate function
@@ -32,5 +31,5 @@ export default function Program(){
             </div>
         </div>
         </>
-    )
+)
 }
