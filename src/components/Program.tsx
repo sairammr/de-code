@@ -138,7 +138,10 @@ export default function Program() {
                     </div>
                     
                     </div>
+                    <div style={{display:"flex",justifyContent:"flex-end",marginBottom:"2%",marginRight:"3%"}}> <button className="withdraw-button" style={{backgroundColor:"#CCEFD4",color:"#34A853",width:"20%",borderRadius:"5px",padding:"2% 0%",marginTop:"2%",fontSize:"14px",fontWeight:"500"}}>Submit</button>
+                    </div>
                 </div>
+                
             </div>
         </>
     );
