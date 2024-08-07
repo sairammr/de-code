@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 interface Course {
   icon: string;
@@ -135,13 +135,16 @@ const ExamIntro: React.FC = () => {
   }
 
   const course = courses[courseIndex];
-
+  const navigate =useNavigate();
+  const movetest = (): void => {
+    navigate('/program', { replace: true });
+};
   return (
     <div className="course-card" style={{ width: "50vw" }}>
       <div className="course-header" style={{ color: "#565656" }}>
         <h2 style={{ color: "#565656" }}>{course.title}</h2>
         <p>{course.company}</p>
-        <button className="start-test" style={{ color: "#FFF", marginTop: "2%", marginBottom: "2%" }}>Start Test</button>
+        <button className="start-test" style={{ color: "#FFF", marginTop: "2%", marginBottom: "2%" }} onClick={movetest}>Start Test</button>
       </div>
       <div className="course-certification" style={{ color: "#34A853" }}>
         <span>Certification</span>
