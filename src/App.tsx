@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar1 from '../src/components/navbar1';
 import Courses from './pages/Courses';
-import Landing from './pages/landing';
+import Landing from './pages/landing';	
 import LoginPage from './pages/loginPage';
+import Program from './components/Program';
 const AppContent=()=> {
 	const location = useLocation();
 	return (
@@ -16,6 +17,7 @@ const AppContent=()=> {
         <Route path="/" element={<Landing/>}/>	
 		
         <Route path="/courses" element={<Courses />} />
+		<Route path='/leaderboard' element={<Program/>}/>
        <Route path="/login" element={<LoginPage/>}/>
       </Routes>
    

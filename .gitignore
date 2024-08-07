@@ -25,3 +25,6 @@ dist-ssr
 *.sw?
 yarn.lock
 package-lock.json
+src/api/bun.lockb
+bun.lockb
+bun.lockb

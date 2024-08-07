@@ -19,7 +19,7 @@ const Navbar1 = () => {
                 <Link to="/"> <div style={{fontSize:"15px",fontWeight:"100"}} >Home</div></Link>
                 <Link to="/courses">
                <div style={{fontSize:"15px",fontWeight:"100"}} >Courses</div></Link>
-               <Link to="/courses"><div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div></Link>
+               <Link to="/leaderboard"><div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div></Link>
                <Link to="/courses"><div style={{fontSize:"15px",fontWeight:"100"}}>Events</div></Link>
                <Link to="/login"><div style={{
                     fontSize:"15px",fontWeight:"100",
