@@ -5,21 +5,28 @@ import Navbar1 from '../src/components/navbar1';
 import Courses from './pages/Courses';
 import Landing from './pages/landing';
 import LoginPage from './pages/loginPage';
+import CourseDetailsPage from './pages/coursedetailspage';
+import EventPage from './pages/event';
+import Footer from './components/footer';
 const AppContent=()=> {
 	const location = useLocation();
 	return (
 		<div>
-      {location.pathname !== '/login' &&  <Navbar1 /> }
+    {location.pathname !== '/login' &&  <Navbar1 /> }
 		
       
-      <Routes>
+     <Routes>
         <Route path="/" element={<Landing/>}/>	
-		
+		<Route path="course-details/:index" element={<CourseDetailsPage />} />
         <Route path="/courses" element={<Courses />} />
-       <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/login" element={<LoginPage/>}/>
+		<Route path="/events" element={<EventPage/>}/>
+
       </Routes>
-   
+	  <br />
+	  <Footer/>
 	</div>
+	
   );
 
 }

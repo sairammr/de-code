@@ -6,7 +6,25 @@ w3m-button{
     display: flex;
     justify-content: center;
 }
-
+*{
+    background-color: "#FFF";
+  
+}
 body{
-    background-color: "#FFFFFF";
+    background-color: "#FFF";
+}
+.searchbar::placeholder{
+    padding-left: 5%;
+    font-size:13px;
+    color: #5A5A5A;
+    opacity: 50%;
+}
+.eventButton{
+    padding: 0% 1%;
+    border : 1px solid #6f6f6f;
+    border-radius: 50px;
+    margin-right: 1%;
+    color:#6f6f6f;
+    font-size: 13px;
+    
 }

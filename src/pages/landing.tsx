@@ -7,7 +7,6 @@ const Landing=() => {
             
             <Lcomp/>
             <br />
-            <Footer/>
         </div>
     )
 }
