@@ -1,18 +1,28 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import solarizedDark from 'react-syntax-highlighter/dist/esm/styles/hljs/solarized-dark'; 
+import solarizedDark from 'react-syntax-highlighter/dist/esm/styles/hljs/solarized-dark';
 import "../index.css";
 
 export default function Program() {
     const navigate = useNavigate();
+    const [showPopup, setShowPopup] = useState(false);
 
-    const handleback = (): void => {
+    const handleBack = (): void => {
         navigate('/', { replace: true });
+    };
+
+    const handleSubmit = (): void => {
+        setShowPopup(true);
+    };
+
+    const handleClosePopup = (): void => {
+        setShowPopup(false);
     };
 
     return (
         <>
-            <span onClick={handleback}>
+            <span onClick={handleBack}>
                 <h2 style={{ paddingLeft: '5%' }}>&#60; Go Back</h2>
             </span>
             <div className="program-main">
@@ -28,43 +38,36 @@ export default function Program() {
                         {/* Header content can be added here */}
                     </div>
                     <div className="program-right-question">
-                        <div style={{ color: 'black',paddingLeft:"3%" }}>
+                        <div style={{ color: 'black', paddingLeft: "3%" }}>
                             <h1 style={{ fontSize: '20px', fontWeight: '700' }}>First and Last Position of an Element In Sorted Array</h1>
-
                             {/* Problem statement and other details */}
                             <h2>Problem Statement</h2>
                             <p>
                                 You have been given a sorted array/list ARR consisting of 'N' elements. You are also given an integer 'K'.
                                 Now, your task is to find the first and last occurrence of 'K' in ARR.
                             </p>
-
                             <h3>Note:</h3>
                             <ol>
                                 <li>If 'K' is not present in the array, then the first and the last occurrence will be -1.</li>
                                 <li>ARR may contain duplicate elements.</li>
                             </ol>
-
                             <p>
                                 For example, if ARR = [0, 1, 1, 5] and K = 1, then the first and last occurrence of 1 will be 1 (0-indexed) and 2.
                             </p>
-
                             <h2>Input Format</h2>
                             <p>
                                 The first line of input contains an integer 'T' which denotes the number of test cases or queries to be run. Then the test cases follow.
                                 The first line of each test case contains two single-space separated integers 'N' and 'K', respectively.
                                 The second line of each test case contains 'N' single space-separated integers denoting the elements of the array/list ARR.
                             </p>
-
                             <h2>Output Format</h2>
                             <p>
                                 Return two single-space separated integers denoting the first and the last occurrence of 'K' in ARR, respectively.
                             </p>
-
                             <h3>Note:</h3>
                             <p>
                                 You do not need to print anything; it has already been taken care of. Just implement the given function.
                             </p>
-
                             <h2>Constraints:</h2>
                             <ul>
                                 <li>1 &lt;= T &lt;= 100</li>
@@ -73,7 +76,6 @@ export default function Program() {
                                 <li>0 &lt;= ARR[i] &lt;= 10^5</li>
                                 <li>Time Limit: 1 second</li>
                             </ul>
-
                             <h2>Sample Input 1:</h2>
                             <pre>
                                 2
@@ -82,19 +84,16 @@ export default function Program() {
                                 8 2
                                 0 0 1 1 2 2 2 2
                             </pre>
-
                             <h2>Sample Output 1:</h2>
                             <pre>
                                 -1 -1
                                 4 7
                             </pre>
-
                             <h3>Explanation Of Sample Output 1:</h3>
                             <p>
                                 For the first test case, 3 is not present in the array. Hence the first and last occurrence of 3 is -1 and -1.
                                 For the second test case, the first occurrence of 2 is at index 4 and last occurrence is at index 7.
                             </p>
-
                             <h2>Sample Input 2:</h2>
                             <pre>
                                 2
@@ -103,7 +102,6 @@ export default function Program() {
                                 1 2
                                 2
                             </pre>
-
                             <h2>Sample Output 2:</h2>
                             <pre>
                                 0 3
@@ -111,11 +109,10 @@ export default function Program() {
                             </pre>
                         </div>
                     </div>
-                <div style={{display:"flex"}}>
-                    <div className="program-right-console">
-                        
-                        <SyntaxHighlighter language="typescript" style={solarizedDark}>
-                            {`function findOccurrences(arr: number[], k: number): [number, number] {
+                    <div style={{ display: "flex" }}>
+                        <div className="program-right-console">
+                            <SyntaxHighlighter language="typescript" style={solarizedDark}>
+                                {`function findOccurrences(arr: number[], k: number): [number, number] {
     let first = -1;
     let last = -1;
 
@@ -128,21 +125,37 @@ export default function Program() {
 
     return [first, last];
 }`}
-                        </SyntaxHighlighter>
-                        
-                      
+                            </SyntaxHighlighter>
+                        </div>
+                        <div className='output-display'>
+                            <p>-1 -1 4 7</p>
+                            <p>Test Cases Passed ✅</p>
+                        </div>
                     </div>
-                    <div className='output-display'>
-                        <p>-1 -1 4 7</p>
-                        <p>Test Cases Passed ✅</p>
-                    </div>
-                    
-                    </div>
-                    <div style={{display:"flex",justifyContent:"flex-end",marginBottom:"2%",marginRight:"3%"}}> <button className="withdraw-button" style={{backgroundColor:"#CCEFD4",color:"#34A853",width:"20%",borderRadius:"5px",padding:"2% 0%",marginTop:"2%",fontSize:"14px",fontWeight:"500"}}>Submit</button>
+                    <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "2%", marginRight: "3%" }}>
+                        <button 
+                            className="withdraw-button" 
+                            style={{ backgroundColor: "#CCEFD4", color: "#34A853", width: "20%", borderRadius: "5px", padding: "2% 0%", marginTop: "2%", fontSize: "14px", fontWeight: "500" }}
+                            onClick={handleSubmit}
+                        >
+                            Submit
+                        </button>
                     </div>
                 </div>
-                
             </div>
+
+            {showPopup && (
+                <div className="popup-overlay">
+                    <div className="popup-content">
+                        <h2>Result</h2>
+                        <p>You scored 75% marks and were awarded with 0.05 tokens</p>
+                        <div className="popup-buttons">
+                            <button onClick={() => navigate('/profile')}>Profile</button>
+                            <button onClick={handleClosePopup}>Continue</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }
