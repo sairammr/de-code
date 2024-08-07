@@ -14,7 +14,8 @@
     align-items: flex-start;
     justify-content: center;
     background-color: black;
-    border-radius: 8% 0% 0% 8%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 .program-sub{
     display: flex;
@@ -28,6 +29,9 @@
     flex-direction: column;
     color: black;
     gap: 1%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+
 }
 .program-right-header{
     display: flex;
@@ -55,11 +59,32 @@
 }
 
 .program-right-console::before {
-    content: 'Console Output'; /* Title for the console area */
+    content: '   Code'; /* Title for the console area */
     display: block;
     background-color: #333; /* Darker background for the title */
     color: #fff; /* White text for the title */
     padding: 5px;
     border-bottom: 1px solid #444; /* Border below the title */
     font-weight: bold; /* Bold font for the title */
+}
+.output-display::before{
+    content: ' OUTPUT'; /* Title for the console area */
+    display: block;
+    background-color: #333; /* Darker background for the title */
+    color: #fff; /* White text for the title */
+    padding: 5px;
+    border-bottom: 1px solid #444; /* Border below the title */
+    font-weight: bold; /* Bold font for the title */
+}
+.output-display{
+    width: 50%;
+    background-color: #1e1e1e; /* Dark background for the console */
+    color: #1dcd38; /* Light text color */
+    border: 1px solid #333; /* Border to define the console area */
+    border-radius: 4px; /* Rounded corners for a softer look */
+    padding: 10px; /* Padding inside the console area */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for the code */
+    font-size: 14px; /* Font size */
+    overflow: auto; /* Scroll if content overflows */
+    height: 300px; /* Height of the console area */
 }

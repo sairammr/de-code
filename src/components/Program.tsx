@@ -30,7 +30,7 @@ export default function Program() {
                         {/* Header content can be added here */}
                     </div>
                     <div className="program-right-question">
-                        <div style={{ color: 'black' }}>
+                        <div style={{ color: 'black',paddingLeft:"3%" }}>
                             <h1 style={{ fontSize: '20px', fontWeight: '700' }}>First and Last Position of an Element In Sorted Array</h1>
 
                             {/* Problem statement and other details */}
@@ -113,8 +113,9 @@ export default function Program() {
                             </pre>
                         </div>
                     </div>
+                <div style={{display:"flex"}}>
                     <div className="program-right-console">
-                        {/* Code example */}
+                        
                         <SyntaxHighlighter language="typescript" style={solarizedDark}>
                             {`function findOccurrences(arr: number[], k: number): [number, number] {
     let first = -1;
@@ -130,6 +131,14 @@ export default function Program() {
     return [first, last];
 }`}
                         </SyntaxHighlighter>
+                        
+                      
+                    </div>
+                    <div className='output-display'>
+                        <p>-1 -1 4 7</p>
+                        <p>Test Cases Passed ✅</p>
+                    </div>
+                    
                     </div>
                 </div>
             </div>

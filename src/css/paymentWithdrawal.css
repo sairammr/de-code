@@ -1,0 +1,32 @@
+/* src/PaymentWithdrawal.css */
+
+.payment-withdrawal {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-withdrawal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .wallet-balance {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .network-selection,
+  .token-selection {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
