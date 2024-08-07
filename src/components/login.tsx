@@ -1,5 +1,5 @@
-import back from "../assets/Rectangle.svg"
 import logo from "../assets/logo1.svg"
+import WalletLogin from "../pages/WalletLogin";
 const Logincomp = ()=>{
     return (
         <>
@@ -17,6 +17,7 @@ const Logincomp = ()=>{
             </div>
             <div style={{backgroundColor:"#FFF",height:"100vh",width:"50vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
                 <div style={{color:"#73114B",fontSize:"24px",fontWeight:"500"}}>Log-in Securely !!!</div>
+                <WalletLogin/>
             </div>
         </div>
         </>

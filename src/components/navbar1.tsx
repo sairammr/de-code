@@ -21,6 +21,8 @@ const Navbar1 = () => {
                <div style={{fontSize:"15px",fontWeight:"100"}} >Courses</div></Link>
                <Link to="/courses"><div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div></Link>
                <Link to="/events"><div style={{fontSize:"15px",fontWeight:"100"}}>Events</div></Link>
+               <Link to="/leaderboard"><div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div></Link>
+               <Link to="/courses"><div style={{fontSize:"15px",fontWeight:"100"}}>Events</div></Link>
                <Link to="/login"><div style={{
                     fontSize:"15px",fontWeight:"100",
                     backgroundColor:"#FFF",

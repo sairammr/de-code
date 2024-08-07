@@ -2,3 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.program-main{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+}
+.program-left{
+    flex: 0 0 15%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 8% 0% 0% 8%;
+}
+.program-sub{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+.program-right{
+    display: flex;
+    background-color: grey;
+    flex-direction: column;
+    gap: 1%;
+}
+.program-right-header{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.program-right-question{
+
+}
+.program-right-console{
+
+}
