@@ -10,6 +10,8 @@ import EventPage from './pages/event';
 import Footer from './components/footer';
 import Program from './components/Program';
 import ExamIntro from './components/examintro'; // Assuming you have this component
+import PaymentWithdrawal from './components/paymentWithdrawal';
+import SwapComponent from './components/garden';
 
 const AppContent = () => {
   const location = useLocation();
@@ -23,8 +25,11 @@ const AppContent = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/events" element={<EventPage />} />
 		<Route path='/program' element={<Program/>}/>
+		<Route path='/withdraw' element={<PaymentWithdrawal/>}/>
+		<Route path='/profile' element={<PaymentWithdrawal/>}/>
         <Route path="/exam/courses/:id" element={<ExamIntro />} />
         <Route path="/leaderboard" element={<Program />} />
+		<Route path='/withdrawtowallet/:network/:token/:amountwith' element={<SwapComponent address={""}/>}/>
       </Routes>
       <br />
       <Footer />

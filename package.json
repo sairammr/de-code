@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@anon-aadhaar/react": "^2.2.3",
+    "@catalogfi/wallets": "^0.2.47",
+    "@gardenfi/core": "^0.1.15",
+    "@gardenfi/orderbook": "^0.1.11",
     "@tanstack/react-query": "^5.50.1",
     "@types/react-toastify": "^4.1.0",
     "@web3-react/core": "^6.1.9",
@@ -30,6 +33,7 @@
     "react-router-dom": "^6.24.1",
     "react-syntax-highlighter": "^15.5.0",
     "viem": "^2.17.3",
+    "vite-plugin-wasm": "^3.3.0",
     "wagmi": "^2.10.10",
     "web3": "^4.10.0"
   },

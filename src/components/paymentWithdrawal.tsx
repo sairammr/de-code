@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import "../css/paymentWithdrawal.css";
+import { useNavigate } from 'react-router-dom';
 
 const PaymentWithdrawal: React.FC = () => {
     const [selectedNetwork, setSelectedNetwork] = useState('');
     const [selectedToken, setSelectedToken] = useState('');
     const [withdrawalAmount, setWithdrawalAmount] = useState('');
-    const balance = 100; // Example balance
+    const balance = 100; 
   
     const handleNetworkChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       setSelectedNetwork(event.target.value);
-      setSelectedToken(''); // Reset token selection when network changes
+      console.log(selectedNetwork)
+      setSelectedToken(''); 
     };
   
     const handleTokenChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -26,7 +28,13 @@ const PaymentWithdrawal: React.FC = () => {
     const isAmountValid = () => {
       return parseFloat(withdrawalAmount) <= balance && parseFloat(withdrawalAmount) > 0;
     };
-  
+    const navigate=useNavigate();
+    
+    const moveToTransaction = (selectedNetwork:string,withdrawalAmount:string,selectedToken?:string) => {
+      console.log(selectedNetwork,withdrawalAmount,selectedToken)
+      const tokenPath = selectedToken ? selectedToken : selectedNetwork;
+      navigate(`/withdrawtowallet/${selectedNetwork}/${tokenPath}/${withdrawalAmount}`, { replace: true });
+  };
     return (
       <div className="payment-withdrawal" >
         <h2 style={{color:"#565656"}}>Withdraw</h2>
@@ -36,7 +44,6 @@ const PaymentWithdrawal: React.FC = () => {
         <div className="network-selection" >
           <label htmlFor="network"  style={{color:"#565656",fontWeight:"300"}}>Select Network:</label>
           <select id="network" value={selectedNetwork} onChange={handleNetworkChange} style={{backgroundColor:"#fff",color:"#565656",fontWeight:"300",width:"100%",border:"1px solid #ccc",borderRadius:"5px"}}>
-            <option value="">--Select Network--</option>
             <option value="Diam"  style={{color:"#565656",fontWeight:"300"}}>Diam</option>
             <option value="Garden"  style={{color:"#565656",fontWeight:"300"}}>Garden</option>
           </select>
@@ -47,7 +54,6 @@ const PaymentWithdrawal: React.FC = () => {
             <select id="token" value={selectedToken} onChange={handleTokenChange} style={{backgroundColor:"#fff",color:"#565656",fontWeight:"300",width:"100%",border:"1px solid #ccc",borderRadius:"5px"}}>
               <option value="">--Select Token--</option>
               <option value="WBTC">WBTC</option>
-              <option value="BTC">BTC</option>
               <option value="Arbitrum">Arbitrum</option>
             </select>
           </div>
@@ -64,7 +70,7 @@ const PaymentWithdrawal: React.FC = () => {
             <p className="error-message">Amount exceeds balance</p>
           )}
           {isAmountValid() && withdrawalAmount && (
-            <button className="withdraw-button" style={{backgroundColor:"#CCEFD4",color:"#34A853",width:"100%",borderRadius:"5px",padding:"2% 0%",marginTop:"7%"}}>Withdraw</button>
+            <button className="withdraw-button" onClick={()=>moveToTransaction(selectedNetwork,withdrawalAmount.toString(),selectedToken)} style={{backgroundColor:"#CCEFD4",color:"#34A853",width:"100%",borderRadius:"5px",padding:"2% 0%",marginTop:"7%"}}>Withdraw</button>
           )}
         </div>
       </div>
