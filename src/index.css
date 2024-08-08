@@ -176,13 +176,17 @@
   
   .leaderboard th,
   .leaderboard td {
-    border: 1px solid #ddd;
+    border: 1px solid #a5a5a5;
     padding: 8px;
   }
-  
+  .leaderboard td {
+    color: #555;
+
+  }
   .leaderboard th {
     background-color: #f2f2f2;
-    font-weight: bold;
+    font-weight: 400;
+    color: #579BB1;
   }
   
   .leaderboard tr:nth-child(even) {
@@ -190,10 +194,14 @@
   }
   
   .leaderboard tr:hover {
-    background-color: #ddd;
+    background-color: #fbfffe;
+  }
+.tyt{
+    font-weight: 400;
+    font-size: 30;
   }
   
   .leaderboard td {
-    text-align: left;
+    text-align: center;
   }
   

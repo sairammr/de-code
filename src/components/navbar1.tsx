@@ -22,13 +22,15 @@ const Navbar1 = () => {
                <Link to="/events"><div style={{fontSize:"15px",fontWeight:"100"}}>Events</div></Link>
                <Link to="/leaderboard"><div style={{fontSize:"15px",fontWeight:"100"}}>Leaderboard</div></Link>
                <Link to="/profile"><div style={{fontSize:"15px",fontWeight:"100"}}>Profile</div></Link>
-               <Link to="/login"><div style={{
+               <Link to="/login" ><div style={{
                     fontSize:"15px",fontWeight:"100",
-                    backgroundColor:"#FFF",
                     maxHeight : "3vh",
                     color:"#5B5B5B",
-                    padding:"0% 5% 5% 5%",
-                    borderRadius: "80px"
+                    borderRadius: "80px",
+                    backgroundColor:"#fff",
+                    paddingLeft:"10px",
+                    paddingRight:"10px",
+                    paddingTop:"2px",
                 }}>Login</div></Link>
                 
             </nav>

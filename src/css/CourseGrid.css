@@ -1,8 +1,10 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 60px;
     padding: 20px;
+    margin-left: 7%;
+    margin-right: 10%;
   }
   .grid-item {
     position: relative;

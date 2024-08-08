@@ -72,7 +72,7 @@ const SwapComponent: React.FC<SwapComponentProps> = ({ address }) => {
   const { metaMaskAddress } = useMetaMaskStore();
 
   return (
-    <div className="swap-component">
+    <div className="swap-component" style={{display:"flex", justifyContent:"center",alignItems:"center",flexDirection:"column",height:"50vh"}}>
       <WalletConnect />
       <SwapAmount amount={amount} changeAmount={changeAmount} amountwit={amountwit} />
       <Swap amount={amount} changeAmount={changeAmount} address={metaMaskAddress || address} />
@@ -84,12 +84,15 @@ const WalletConnect: React.FC = () => {
   const { connectMetaMask, metaMaskIsConnected } = useMetaMaskStore();
 
   return (
-    <div className="swap-component-top-section">
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"2%",marginBottom:"1%"}}>
+    <div className="swap-component-top-section" style={{background:"#D7C5A8",width:"17vw",padding:"6%",
+      color:"#FFF",borderRadius:"10px",display:"flex",justifyContent:"center",alignItems:"center"
+    }}>
       <MetaMaskButton
         isConnected={metaMaskIsConnected}
         onClick={connectMetaMask}
       />
-    </div>
+    </div></div>
   );
 };
 
@@ -226,13 +229,14 @@ const Swap: React.FC<SwapAndAddressComponentProps> = ({
           />
         </div>
       </div>
-      <button
+      <div  style={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"2%",marginBottom:"15%"}}>
+      <button style={{backgroundColor:"#287921", color:"#fff", padding:"1% 60%",borderRadius:"6px"}}
         className={`button-${metaMaskIsConnected ? "white" : "black"}`}
         onClick={handleSwap}
         disabled={!metaMaskIsConnected}
       >
-        Contribute
-      </button>
+        Confirm Withdraw
+      </button></div>
     </div>
   );
 };

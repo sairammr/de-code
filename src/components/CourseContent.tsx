@@ -20,7 +20,7 @@ const CourseGrid: React.FC<CourseGridProps> = ({ courses }) => {
   };
   
   return (
-    <div className="grid-container" >
+    <div className="grid-container" style={{    borderBottom:"1px solid rgb(241 233 233)"}} >
       {courses.map((course, index) => (
         <div key={index} className="grid-item" onClick={() =>courseDetailsRedirection(index)}>
           <div className="label">{course.label}</div>

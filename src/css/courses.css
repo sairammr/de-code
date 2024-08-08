@@ -16,15 +16,12 @@
   
   .courses-main {
     margin-top: 3%;
-    display: flex;
-    flex-direction: row;
   }
   
   .courses-left {
     display: flex;
     flex: 0 0 64%;
     flex-direction: column;
-    margin-right: 2%;
   }
   
   .courses-right {
@@ -41,18 +38,21 @@
     display: grid;
     grid-template-columns: repeat(3, 32%);
     justify-content: space-around;
+    
     gap: 2rem;
-    margin-left: 3.5%;
-    margin-right: 3.5%;
-    margin-bottom: 3.5%;
+    padding-left: 8%;
+    padding-right: 3.5%;
+    padding-bottom : 3.5%;
+    border-bottom:1px solid rgb(241 233 233);
   }
   
   .study-plan {
     font-size: 1.5rem;
     padding: 1%;
     margin-left: 3%;
-    color: rgb(44, 43, 43);
-    font-weight: 700;
+    font-size: 30px;
+    color: #565656;
+    font-weight: 100;
   }
   
   .item-icon {
@@ -64,9 +64,9 @@
   }
   
   .item-text {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: black;
+    font-size: 14x;
+    font-weight: 400;
+    color: #5a5a5a;
   }
   
   .study-plan-item {
@@ -77,10 +77,8 @@
     height: 6rem;
     width: 18rem;
     font-size: 16px;
-    background-color: #e4eee4;
-    background: linear-gradient(315deg, #f0f0f0, #ebeaea);
+    background-color: #F1F3F6;
     border-radius: 5px;
-    box-shadow: -5px -5px 10px #b5b5b5, 5px 5px 10px #ffffff;
   }
   
   @media (max-width: 600px) {
@@ -97,6 +95,11 @@
   .ease-text {
     display: flex;
     flex-direction: column;
+    font-size: 13px;
+  }
+  .ease-text>h2{
+    font-size: 18px;
+
   }
   
   .status {
@@ -104,13 +107,15 @@
     flex-direction: row;
     gap: 1rem;
   }
+  .status>img{
+    height: 50%;
+  }
   
   .courses-access {
     display: flex;
     flex-direction: column;
-    padding: 2%;
-    width: max-content;
-    height: max-content;
+    padding: 1%;
+    
   }
   
   .courses-ease {
@@ -128,7 +133,12 @@
   .courses-access,
   .course-calender {
     border-radius: 8%;
-    background: linear-gradient(315deg, #cacaca, #f0f0f0);
-    box-shadow: -5px -5px 10px #5a5a5a, 5px 5px 10px #ffffff;
+    color: #565656;
+    background: #F1F3F6;
+    width: 20%;
+
   }
-    
+    h5{
+      font-weight: 100;
+      font-size: 13px;
+    }

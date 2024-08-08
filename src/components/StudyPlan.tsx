@@ -19,7 +19,7 @@ const studyPlanItems = [
    
     return (
       <>
-        <h3 className='study-plan'>Study Plan</h3>
+        <h3 className='study-plan' style={{color:"#579BB1"}}>Study Plan</h3>
         <div className="study-plan-grid" >
           {studyPlanItems.map((item, index) => (
           <div  key={index} onClick={()=>courseDetailsRedirection(index)}>
@@ -29,7 +29,6 @@ const studyPlanItems = [
             </div></div>
           ))}
         </div>
-        <hr style={{ border: '1px solid #000', margin: '.3rem 0' }} />
       </>
     );
   }

@@ -9,7 +9,7 @@ const LeaderBoardPage = ()=> {
         { username: 'Space Monkey 01', ranking: 2, problemsSolved: 140, tokensEarned: 280 },
         { username: 'Hashirama Senju', ranking: 3, problemsSolved: 130, tokensEarned: 260 },
       ];
-      return(<Leaderboard entries={entries} />)}
+      return( <div style={{height:"50vw"}}><Leaderboard entries={entries} /> </div>)}
         
     export default LeaderBoardPage;
 

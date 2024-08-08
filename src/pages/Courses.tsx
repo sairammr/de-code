@@ -5,6 +5,53 @@ import AccessStatus from "../components/courses-access";
 import Calendar from "../components/Calender";
 import CourseContent from "../components/CourseContent";
 export default function Courses() {
+  const tutor = [
+    {      icon: '💻',
+
+      title: "Alice Johnson", label: 'Beginner',
+      details: "Introduction to JavaScript",mcqQuestions: 30,
+      programmingQuestions: 15,
+      company: 50
+    },
+    {      icon: '📗',
+
+      title: "Michael Brown",
+      details: "Advanced Python Programming",
+      label: 'Beginner',
+      mcqQuestions: 30,
+      programmingQuestions: 15,
+      company: 75
+    },
+    {      icon: '📘',
+
+      title: "Sophia Davis",
+      details: "Data Structures and Algorithms",
+      company: 65,mcqQuestions: 30,
+      programmingQuestions: 15,
+      label: 'Advanced',
+
+    },
+    {      icon: '🔧',
+
+      title: "James Wilson",
+      details: "Web Development with React",
+      label: 'Beginner',
+      mcqQuestions: 30,
+      programmingQuestions: 15,
+
+      company: 80
+    },
+    {      icon: '🔍',
+
+      title: "Emily Smith",
+      details: "Machine Learning Basics",
+      label: 'Advanced',
+      mcqQuestions: 30,
+      programmingQuestions: 15,
+      company: 90
+    }
+  ];
+  
   const courses = [
     {
       icon: '💻',
@@ -123,19 +170,25 @@ export default function Courses() {
                 <div className="courses-ad">
                     <Ad/>
                     <StudyPlan/>
+                    <div style={{fontSize:"30px",fontWeight:"300",color:"#579BB1",paddingLeft:"5%",marginTop:"1%"}}>Tutors</div>
+                    <CourseContent courses={tutor}/>
                 </div>
+                <div style={{fontSize:"30px",fontWeight:"300",color:"#579BB1",paddingLeft:"5%",marginTop:"1%"}}>Problems</div>
+
                 <CourseContent courses={courses}/>
+                
             </div>
             <div className="courses-right">
                 <div className="courses-ease">
-                    <AccessStatus/>
-                    <Calendar/>
+                    
                 </div>
                 <div className="courses-wallet">
-
+                
                 </div>
+               
             </div>
         </div>
+
         </>
     )
 }
