@@ -9,7 +9,9 @@ import CourseDetailsPage from './pages/coursedetailspage';
 import EventPage from './pages/event';
 import Footer from './components/footer';
 import Program from './components/Program';
-import ExamIntro from './components/examintro'; // Assuming you have this component
+import ExamIntro from './components/examintro';
+import Profile from './pages/profilepage'; 
+import LeaderBoardPage from './pages/leaderboard';// Assuming you have this component
 
 const AppContent = () => {
   const location = useLocation();
@@ -24,7 +26,9 @@ const AppContent = () => {
         <Route path="/events" element={<EventPage />} />
 		<Route path='/program' element={<Program/>}/>
         <Route path="/exam/courses/:id" element={<ExamIntro />} />
-        <Route path="/leaderboard" element={<Program />} />
+        <Route path="/leaderboard" element={<LeaderBoardPage/>} />
+		<Route path="/profile" element={<Profile/>}/>
+
       </Routes>
       <br />
       <Footer />
