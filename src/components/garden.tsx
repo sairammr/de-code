@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { useState } from "react";
-import {  useGarden, useSignStore, useGardenSetup } from "./store";
+import {  useGarden, useSignStore, useGardenSetup } from "../components/store";
 import { Assets } from "@gardenfi/orderbook";
 import { useParams } from "react-router-dom";
 import create from 'zustand';
-import TransactionsComponent from "../TransactionComponent";
 type EvmWalletState = {
   metaMaskIsConnected: boolean;
   metaMaskAddress: string | null;
@@ -234,7 +233,6 @@ const Swap: React.FC<SwapAndAddressComponentProps> = ({
       >
         Contribute
       </button>
-      <TransactionsComponent/>
     </div>
   );
 };

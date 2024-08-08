@@ -11,7 +11,7 @@ interface LeaderboardEntry {
   
   const Leaderboard: React.FC<LeaderboardProps> = ({ entries }) => {
     return (
-      <div className="leaderboard" style={{marginTop:"3%"}}>
+      <div className="leaderboard" style={{marginTop:"3%",marginBottom:"13%"}}>
         <table>
           <thead>
             <tr>

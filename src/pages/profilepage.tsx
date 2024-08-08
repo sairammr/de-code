@@ -1,9 +1,7 @@
 const Profile = () => {
     return(
         <>
-        <div className="profile-header">
-          <h2></h2>
-        </div>
+
         <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginBottom:"3%"}}>
             <div className="profile-content"  style={{width:"80vw",marginTop:"3%",display:"flex",justifyContent:"space-between",height:"25vw"}}>
                 <div style={{width:"65%"}}><div style={{backgroundColor:"#F1F3F6",width:"100%",borderRadius:"15px",padding:"2%",height:"50%"}}>
@@ -13,7 +11,7 @@ const Profile = () => {
             <div style={{width:"100%",backgroundColor:"#F1F3F6",marginTop:"3%",borderRadius:"10px",display:"flex",justifyContent:"space-around",padding:"2%",color:"#000",fontSize:"16px",flexDirection:"column"}}>
             <div style={{padding:"2%"}}>Frontend : 37 de-coins</div>
             <div style={{padding:"2%"}}>Backend : 27 de-coins</div>
-            <div style={{padding:"2%"}}>DSA : 36 de-coins</div></div>
+            <div style={{padding:"2%"}}>DSA : 33 de-coins</div></div>
         </div>
 
 
