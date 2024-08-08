@@ -1,4 +1,18 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Profile = () => {
+
+    const [myValue, setMyValue] = useState("");
+
+useEffect(() => {
+    const storedValue = sessionStorage.getItem('username') || ""; 
+    setMyValue(storedValue);
+}, []);
+    const navigate= useNavigate();
+    const profileredirect = () => {
+        navigate(`/withdraw`);
+      };
     return(
         <>
         <div className="profile-header">
@@ -8,7 +22,7 @@ const Profile = () => {
             <div className="profile-content"  style={{width:"80vw",marginTop:"3%",display:"flex",justifyContent:"space-between",height:"25vw"}}>
                 <div style={{width:"65%"}}><div style={{backgroundColor:"#F1F3F6",width:"100%",borderRadius:"15px",padding:"2%",height:"50%"}}>
             <h3 style={{color:"#579BB1",textAlign:"center",fontSize:"20px",marginBottom:"1%"}} >User Information</h3>
-            <p style={{color:"#000",fontSize:"16px",marginBottom:"2%",paddingLeft:"5%"}}>Username: Tyler Durden</p>
+            <p style={{color:"#000",fontSize:"16px",marginBottom:"2%",paddingLeft:"5%"}}>Username: {myValue}</p>
             </div>
             <div style={{width:"100%",backgroundColor:"#F1F3F6",marginTop:"3%",borderRadius:"10px",display:"flex",justifyContent:"space-around",padding:"2%",color:"#000",fontSize:"16px",flexDirection:"column"}}>
             <div style={{padding:"2%"}}>Frontend : 37 de-coins</div>
@@ -27,6 +41,7 @@ const Profile = () => {
                 <button 
                             className="withdraw-button" 
                             style={{ marginLeft:"65%",backgroundColor: "#CCEFD4", color: "#34A853", borderRadius: "5px", padding: "3% 5%", marginTop: "2%", fontSize: "14px", fontWeight: "500" }}
+                            onClick={profileredirect}
                         >
                             Withdraw
                         </button>
