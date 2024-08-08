@@ -12,6 +12,8 @@ import Program from './components/Program';
 import ExamIntro from './components/examintro'; // Assuming you have this component
 import PaymentWithdrawal from './components/paymentWithdrawal';
 import SwapComponent from './components/garden';
+import Profile from './pages/profilepage'; 
+import LeaderBoardPage from './pages/leaderboard';// Assuming you have this component
 
 const AppContent = () => {
   const location = useLocation();
@@ -26,10 +28,11 @@ const AppContent = () => {
         <Route path="/events" element={<EventPage />} />
 		<Route path='/program' element={<Program/>}/>
 		<Route path='/withdraw' element={<PaymentWithdrawal/>}/>
-		<Route path='/profile' element={<PaymentWithdrawal/>}/>
+		<Route path='/profile' element={<Profile/>}/>
         <Route path="/exam/courses/:id" element={<ExamIntro />} />
-        <Route path="/leaderboard" element={<Program />} />
 		<Route path='/withdrawtowallet/:network/:token/:amountwith' element={<SwapComponent address={""}/>}/>
+        <Route path="/leaderboard" element={<LeaderBoardPage/>} />
+
       </Routes>
       <br />
       <Footer />
