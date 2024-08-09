@@ -325,5 +325,30 @@
         flex-direction: column; /* Stack courses-ease items vertically on mobile */
         gap: 2%;
       }
+    .container {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+    }
+    
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+    
+    .transaction-details {
+      font-size: 1em;
+    }
+    
+    .transaction-details p {
+      margin: 5px 0;
+    }
+    
+    strong {
+      color: #333;
     }
     

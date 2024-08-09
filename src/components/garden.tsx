@@ -3,7 +3,7 @@
 import { useState } from "react";
 import {  useGarden, useSignStore, useGardenSetup } from "../components/store";
 import { Assets } from "@gardenfi/orderbook";
-import { useParams } from "react-router-dom";
+import { replace, useNavigate, useParams } from "react-router-dom";
 import create from 'zustand';
 type EvmWalletState = {
   metaMaskIsConnected: boolean;
@@ -34,8 +34,8 @@ type EvmWalletAction = {
 }));
 
 type AmountState = {
-  btcAmount: string | null;
   wbtcAmount: string | null;
+  btcAmount: string | null;
 };
 
 type SwapComponentProps = {
@@ -50,8 +50,8 @@ const SwapComponent: React.FC<SwapComponentProps> = ({ address }) => {
   useGardenSetup();
 
   const [amount, setAmount] = useState<AmountState>({
-    btcAmount: null,
     wbtcAmount: null,
+    btcAmount: null,
   });
 
   const changeAmount = (of: "WBTC" | "BTC", value: string) => {
@@ -61,16 +61,16 @@ const SwapComponent: React.FC<SwapComponentProps> = ({ address }) => {
   };
 
   const handleWBTCChange = (value: string) => {
-    const newAmount: AmountState = { wbtcAmount: value, btcAmount: null };
+    const newAmount: AmountState = { btcAmount: value, wbtcAmount: null };
     if (Number(value) > 0) {
-      const btcAmount = (1 - 0.3 / 100) * Number(value);
-      newAmount.btcAmount = btcAmount.toFixed(8).toString();
+      const wbtcAmount = (1 - 0.3 / 100) * Number(value);
+      newAmount.wbtcAmount = wbtcAmount.toFixed(8).toString();
     }
     setAmount(newAmount);
   };
 
   const { metaMaskAddress } = useMetaMaskStore();
-
+  console.log(metaMaskAddress)
   return (
     <div className="swap-component" style={{display:"flex", justifyContent:"center",alignItems:"center",flexDirection:"column",height:"50vh"}}>
       <WalletConnect />
@@ -184,30 +184,38 @@ const Swap: React.FC<SwapAndAddressComponentProps> = ({
   changeAmount,
   address,
 }) => {
+  console.log(address)
   const { garden } = useGarden();
   const { metaMaskIsConnected } = useMetaMaskStore();
-  const { wbtcAmount, btcAmount } = amount;
+  const { btcAmount, wbtcAmount } = amount;
 
   useSignStore();
+  const navigate = useNavigate();
 
+  const handle = () => {
+      navigate(`/withdrawprocess`);
+      handleSwap()
+  };
   const handleSwap = async () => {
+    const navigate=useNavigate();
+    navigate("/profile",{replace:true});
     if (
       !garden ||
-      typeof Number(wbtcAmount) !== "number" ||
-      typeof Number(btcAmount) !== "number"
+      typeof Number(btcAmount) !== "number" ||
+      typeof Number(wbtcAmount) !== "number"
     )
       return;
 
     console.log(Assets.bitcoin_regtest.BTC);
-    const sendAmount = Number(wbtcAmount) * 1e8;
-    const recieveAmount = Number(btcAmount) * 1e8;
+    const sendAmount = Number(btcAmount) * 1e8;
+    const recieveAmount = Number(wbtcAmount) * 1e8;
 
     console.log(Assets.bitcoin_regtest.BTC);
-    changeAmount("WBTC", "");
+    changeAmount("BTC", "");
     try {
       await garden.swap(
-        Assets.ethereum_localnet.WBTC,
         Assets.bitcoin_regtest.BTC,
+        Assets.ethereum_localnet.WBTC,
         sendAmount,
         recieveAmount,
       );
@@ -232,7 +240,7 @@ const Swap: React.FC<SwapAndAddressComponentProps> = ({
       <div  style={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"2%",marginBottom:"15%"}}>
       <button style={{backgroundColor:"#287921", color:"#fff", padding:"1% 60%",borderRadius:"6px"}}
         className={`button-${metaMaskIsConnected ? "white" : "black"}`}
-        onClick={handleSwap}
+        onClick={handle}
         disabled={!metaMaskIsConnected}
       >
         Confirm Withdraw

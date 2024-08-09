@@ -7,7 +7,7 @@
     "start": "node src/api/server.js",
     "dev": "vite",
     "dev:server": "node src/api/server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\"",
+    "dev:all": "concurrently \"npm run dev --host\" \"npm run dev:server\"",
     "build": "vite build",
     "build:server": "tsc",
     "build:all": "npm run build && npm run build:server"

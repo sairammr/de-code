@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../css/paymentWithdrawal.css";
 import { useNavigate } from 'react-router-dom';
-
+import Lastd from "./Lastd";
 const PaymentWithdrawal: React.FC = () => {
     const [selectedNetwork, setSelectedNetwork] = useState('');
     const [selectedToken, setSelectedToken] = useState('');
@@ -34,6 +34,7 @@ const PaymentWithdrawal: React.FC = () => {
       console.log(selectedNetwork,withdrawalAmount,selectedToken)
       const tokenPath = selectedToken ? selectedToken : selectedNetwork;
       navigate(`/withdrawtowallet/${selectedNetwork}/${tokenPath}/${withdrawalAmount}`, { replace: true });
+      return(<Lastd/>)
   };
     return (
       <div className="payment-withdrawal" >

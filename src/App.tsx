@@ -14,6 +14,7 @@ import PaymentWithdrawal from './components/paymentWithdrawal';
 import SwapComponent from './components/garden';
 import Profile from './pages/profilepage'; 
 import LeaderBoardPage from './pages/leaderboard';// Assuming you have this component
+import LoadingComponent from './components/Lastd';
 
 const AppContent = () => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const AppContent = () => {
         <Route path="/events" element={<EventPage />} />
 		<Route path='/program' element={<Program/>}/>
 		<Route path='/withdraw' element={<PaymentWithdrawal/>}/>
+  <Route path='/withdrawprocess' element={<LoadingComponent/>}/>
 		<Route path='/profile' element={<Profile/>}/>
         <Route path="/exam/courses/:id" element={<ExamIntro />} />
 		<Route path='/withdrawtowallet/:network/:token/:amountwith' element={<SwapComponent address={""}/>}/>
@@ -35,6 +37,7 @@ const AppContent = () => {
 
       </Routes>
       <br />
+      <Footer/>
       </div>
   );
 };

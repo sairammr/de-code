@@ -13,26 +13,17 @@ import {
 type EvmWalletState = {
   metaMaskIsConnected: boolean;
   evmProvider: BrowserProvider | null;
+  ethereumAddress: string | null; // Added Ethereum Address
 };
 
 type EvmWalletAction = {
   connectMetaMask: () => Promise<void>;
 };
 
-const networkConfig = {
-  chainId: "0x7A69",
-  chainName: "ethereum localnet",
-  rpcUrls: ["http://localhost:8545"],
-  nativeCurrency: {
-    name: "Ethereum",
-    symbol: "ETH",
-    decimals: 18,
-  },
-};
-
 const useMetaMaskStore = create<EvmWalletState & EvmWalletAction>((set) => ({
   metaMaskIsConnected: false,
   evmProvider: null,
+  ethereumAddress: null, // Initialize Ethereum Address
   connectMetaMask: async () => {
     if (window.ethereum !== null) {
       let provider = new BrowserProvider(window.ethereum);
@@ -44,15 +35,31 @@ const useMetaMaskStore = create<EvmWalletState & EvmWalletAction>((set) => ({
         });
         provider = new BrowserProvider(window.ethereum);
       }
+      const signer = provider.getSigner();
+      const address = await (await signer).getAddress(); // Get Ethereum Address
       set(() => ({
         evmProvider: provider,
         metaMaskIsConnected: true,
+        ethereumAddress: address, // Set Ethereum Address
       }));
     } else {
       throw new Error("MetaMask not Found");
     }
   },
 }));
+
+const networkConfig = {
+  chainId: "0xAA36A7",
+  chainName: "Sepolia",
+  rpcUrls: ["https://sepolia.gateway.tenderly.co/4poRkgkYJnaje6c2tHjtqW"],
+  nativeCurrency: {
+    name: "tenderly(philotheephilix)",
+    symbol: "ETH",
+    decimals: 18,
+  },
+};
+
+
 
 type GardenStore = {
   garden: GardenJS | null;
