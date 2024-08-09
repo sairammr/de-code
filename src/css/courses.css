@@ -325,6 +325,7 @@
         flex-direction: column; /* Stack courses-ease items vertically on mobile */
         gap: 2%;
       }
+    }
     .container {
       border: 1px solid #ddd;
       border-radius: 8px;
